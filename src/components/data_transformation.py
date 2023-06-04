@@ -26,8 +26,8 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         """
-        This function si responsible for data trnasformation
-        
+        This function is responsible for data transformation
+
         """
         try:
             numerical_columns = ["writing_score", "reading_score"]
@@ -67,10 +67,9 @@ class DataTransformation:
             return preprocessor
 
         except Exception as e:
-            raise CustomException(e, sys) # type: ignore
+            raise CustomException(e, sys)  # type: ignore
 
     def initiate_data_transformation(self, train_path, test_path):
-
         try:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
@@ -117,5 +116,4 @@ class DataTransformation:
                 self.data_transformation_config.preprocessor_obj_file_path,
             )
         except Exception as e:
-            raise CustomException(e, sys) # type: ignore
-
+            raise CustomException(e, sys)  # type: ignore
